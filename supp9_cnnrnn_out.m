@@ -1,5 +1,5 @@
 clc; clear; close all
-load('data/supp9_cnnrnn_model1.mat')
+load('data/supp9_cnnrnn_out_model1.mat')
 
 %%
 figure('color','w','pos',[476,521,891,345])
