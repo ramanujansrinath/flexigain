@@ -40,5 +40,5 @@ We use sensory information in remarkably flexible ways. We can generalize by ign
     - [x] Curvature/color decoding and relationship to choice
 
 - [ ] Tuning and fixed readout simulations
-    - [ ] Arc-dependent curvature report across shapes
+    - [x] Arc-dependent curvature report across shapes
     - [ ] Feature-dependent curvature/color 2AFC task
