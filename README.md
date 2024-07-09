@@ -39,6 +39,6 @@ We use sensory information in remarkably flexible ways. We can generalize by ign
     - [x] PCA/QR visualization
     - [x] Curvature/color decoding and relationship to choice
 
-- [ ] Tuning and fixed readout simulations
+- [x] Tuning and fixed readout simulations
     - [x] Arc-dependent curvature report across shapes
-    - [ ] Feature-dependent curvature/color 2AFC task
+    - [x] Feature-dependent curvature/color 2AFC task
