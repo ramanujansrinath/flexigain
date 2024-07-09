@@ -30,7 +30,7 @@ We use sensory information in remarkably flexible ways. We can generalize by ign
             - Note: The data for this analysis will be posted elsewhere, probably OSF. I'll update this and add a link when it's ready. Meanwhile, you can email me and I can share it.
 
 - [ ] Curvature-Color task
-    - [ ] Stimulus generation
+    - [x] Stimulus generation
     - [ ] Psychophysics
     - [ ] Feature tuning and selectivity
     - [ ] PCA/QR visualization
