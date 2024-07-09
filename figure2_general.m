@@ -5,6 +5,7 @@ load('data/figure2_cVals.mat')
 figure; plotGenDec(cVals_v1); sgtitle('V1')
 figure; plotGenDec(cVals_v4); sgtitle('V4')
 
+%%
 function plotGenDec(cVals)
     clf; set(gcf,'pos',[476,237,889,629],'color','w'); 
     subplot(131); hold on;
