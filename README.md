@@ -17,11 +17,15 @@ We use sensory information in remarkably flexible ways. We can generalize by ign
 
 - [ ] RNN modeling
     - [ ] RNN training python code (requires [PsychRNN](https://psychrnn.readthedocs.io/en/latest/) and dependencies)
-    - [ ] Analysis
+    - [ ] Decoding curvature with VGG16 activations
+        - [ ] Random shape training
+        - [ ] Exhaustive shape training
+    - [x] Analysis
         - [x] Arc-dependent curvature report for single shape
-        - [ ] Arc-dependent curvature report with VGG-16 inputs
-            - [ ] Random shape training
-            - [ ] Exhaustive shape training
+        - [x] Arc-dependent curvature report with VGG-16 inputs
+            - [x] Random shape training
+            - [x] Exhaustive shape training
+            - Note: The data for this analysis will be posted elsewhere, probably OSF. I'll update this and add a link when it's ready. Meanwhile, you can email me and I can share it.
 
 - [ ] Curvature-Color task
     - [ ] Stimulus generation
