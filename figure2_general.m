@@ -2,6 +2,8 @@
 clc; clear; close all;
 load('data/figure2_cVals.mat')
 
+% this code also generates supp6
+
 figure; plotGenDec(cVals_v1); sgtitle('V1')
 figure; plotGenDec(cVals_v4); sgtitle('V4')
 

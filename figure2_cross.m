@@ -2,6 +2,8 @@
 clc; clear; close all;
 load('data/figure2_cross.mat')
 
+% this code also generates supp5
+
 %% one session
 setList = 1:120;
 setGroups_ori = arrayfun(@(ii) ii:20:80,1:20,'UniformOutput',false);
