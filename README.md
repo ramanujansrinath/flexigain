@@ -7,7 +7,7 @@ We use sensory information in remarkably flexible ways. We can generalize by ign
 
 ### Code Components
 - Continuous curvature estimation task
-    - Shape generation
+    - Shape generation (requires geom2d toolbox)
     - Behavioral analysis
     - Curvature tuning and selectivity
     - PCA visualization and curvature decoding
