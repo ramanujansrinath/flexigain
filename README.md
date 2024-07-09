@@ -31,13 +31,13 @@ We use sensory information in remarkably flexible ways. We can generalize by ign
             - [x] Exhaustive shape training
             - Note: The data for this analysis will be posted elsewhere, probably OSF. I'll update this and add a link when it's ready. Meanwhile, you can email me and I can share it.
 
-- [ ] Curvature-Color task
+- [x] Curvature-Color task
     - [x] Stimulus generation
-    - [X] Psychophysics
+    - [x] Psychophysics
     - [x] Neural responses to each shape
-    - [X] Gain vs selectivity
-    - [X] PCA/QR visualization
-    - [ ] Curvature/color decoding and relationship to choice
+    - [x] Gain vs selectivity
+    - [x] PCA/QR visualization
+    - [x] Curvature/color decoding and relationship to choice
 
 - [ ] Tuning and fixed readout simulations
     - [ ] Arc-dependent curvature report across shapes
