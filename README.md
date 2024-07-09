@@ -15,11 +15,13 @@ We use sensory information in remarkably flexible ways. We can generalize by ign
     - [x] Comparison of shape-specific and shape-general decoding
     - [x] Saccade decoding
 
-- [ ] RNN modeling
-    - [ ] RNN training python code (requires [PsychRNN](https://psychrnn.readthedocs.io/en/latest/) and dependencies)
-    - [ ] Decoding curvature with VGG16 activations
-        - [ ] Random shape training
-        - [ ] Exhaustive shape training
+- [x] RNN modeling
+    - [x] RNN training python code (requires [PsychRNN](https://psychrnn.readthedocs.io/en/latest/) and dependencies)
+        - [x] Simple inputs
+        - [x] CNN inputs
+    - [x] Decoding curvature with VGG16 activations
+        - [x] Random shape training
+        - [x] Exhaustive shape training
     - [x] Analysis
         - [x] Arc-dependent curvature report for single shape
         - [x] Arc-dependent curvature report with VGG-16 inputs
