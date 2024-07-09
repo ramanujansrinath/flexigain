@@ -32,7 +32,8 @@ We use sensory information in remarkably flexible ways. We can generalize by ign
 - [ ] Curvature-Color task
     - [x] Stimulus generation
     - [ ] Psychophysics
-    - [ ] Feature tuning and selectivity
+    - [x] Neural responses to each shape
+    - [ ] Gain vs selectivity
     - [ ] PCA/QR visualization
     - [ ] Curvature/color decoding and relationship to choice
 
