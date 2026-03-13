@@ -1,6 +1,6 @@
 %%
 clc; clear; close all;
-load('data/figure2_error.mat','rec_v4','rec_v1')
+load('data/figure2_error_eg.mat','rec_v4','rec_v1')
 
 idx = [rec_v4.exptType]==1;
 rec_v1 = rec_v1(idx);
@@ -10,10 +10,11 @@ rec_v4 = rec_v4(idx);
 cols = lines(10);
 sessIds = unique([rec_v4.sessId]);
 fig1 = figure('color','w','position',[-1074,129,665,1089]);
-fig2 = figure('color','w','position',[-395,952,322,267]);
-for ss=16 % 1:length(sessIds)
+% fig2 = figure('color','w','position',[-395,952,322,267]);
+for ss=1 % 1:length(sessIds)
     figure(fig1); clf(fig1)
     exptIds = find([rec_v4.sessId]==sessIds(ss));
+    setIds = [rec_v4(exptIds).setId];
     for recNum=exptIds
         col = cols(recNum-exptIds(1)+1,:);
 
@@ -26,6 +27,7 @@ for ss=16 % 1:length(sessIds)
         d4 = rec_v4(recNum).curv; d4 = groupsummary(d4,grp,'mean');
         e4 = rec_v4(recNum).sel; e4 = groupsummary(e4,grp,'mean');
         f4 = rec_v4(recNum).predcc_spe-rec_v4(recNum).curv;  f4 = groupsummary(f4,grp,'mean');
+        g4 = rec_v4(recNum).predcc_spe; g4 = groupsummary(g4,grp,'mean');
 
         % for v1
         [~,~,grp] = unique([rec_v1(recNum).curv rec_v1(recNum).sel],'rows'); % mean across folds
@@ -36,65 +38,73 @@ for ss=16 % 1:length(sessIds)
         d1 = rec_v1(recNum).curv; d1 = groupsummary(d1,grp,'mean');
         e1 = rec_v1(recNum).sel; e1 = groupsummary(e1,grp,'mean');
         f1 = rec_v1(recNum).predcc_spe-rec_v1(recNum).curv;  f1 = groupsummary(f1,grp,'mean');
+        g1 = rec_v1(recNum).predcc_spe; g1 = groupsummary(g1,grp,'mean');
 
         % for v4
-        subplot(423); hold on;
-        plotTrendPatchLine(gca,d4',b4',col,[0 1],9); co3(recNum-exptIds(1)+1) = corr(d4,b4);
+        subplot(434); hold on;
+        plotTrendPatchLine(gca,d4',b4',col,[0 1],9); co4(recNum-exptIds(1)+1) = corr(d4,b4);
         fixPlot(gca,[-0.1 1.1],[-0.1 1.1],'curvature','dec',-1:0.25:1,-1:0.25:1,'v4 gen dec')
 
-        subplot(424); hold on;
-        plotTrendPatchLine(gca,e4',b4',col,[0 1],9); co4(recNum-exptIds(1)+1) = corr(b4,e4);
+        subplot(435); hold on;
+        plotTrendPatchLine(gca,e4',b4',col,[0 1],9); co5(recNum-exptIds(1)+1) = corr(b4,e4);
         fixPlot(gca,[-0.1 1.1],[-0.1 1.1],'choices','dec',-1:0.25:1,-1:0.25:1,'v4 gen dec v choice')
 
-        subplot(427); hold on;
-        plotTrendPatchLine(gca,a4',c4',col,[-0.5 0.5],9); co7(recNum-exptIds(1)+1) = corr(a4,c4);
+        subplot(436); hold on;
+        plotTrendPatchLine(gca,e4',g4',col,[0 1],9); co6(recNum-exptIds(1)+1) = corr(g4,e4);
+        fixPlot(gca,[-0.1 1.1],[-0.1 1.1],'choices','dec',-1:0.25:1,-1:0.25:1,'v4 spe dec v choice')
+
+        subplot(4,3,10); hold on;
+        plotTrendPatchLine(gca,a4',c4',col,[-0.5 0.5],9); co10(recNum-exptIds(1)+1) = corr(a4,c4);
         fixPlot(gca,[-0.6 0.6],[-0.6 0.6],'beh error','dec error',-1:0.25:1,-1:0.25:1,'v4 gen dec error')
 
-        subplot(428); hold on;
-        plotTrendPatchLine(gca,a4',f4',col,[-0.5 0.5],9); co8(recNum-exptIds(1)+1) = corr(a4,f4);
+        subplot(4,3,11); hold on;
+        plotTrendPatchLine(gca,a4',f4',col,[-0.5 0.5],9); co11(recNum-exptIds(1)+1) = corr(a4,f4);
         fixPlot(gca,[-0.6 0.6],[-0.6 0.6],'beh error','dec error',-1:0.25:1,-1:0.25:1,'v4 spe dec error')
     
         
         % for v1
-        subplot(421); hold on;
+        subplot(431); hold on;
         plotTrendPatchLine(gca,d1',b1',col,[0 1],9); co1(recNum-exptIds(1)+1) = corr(d1,b1);
         fixPlot(gca,[-0.1 1.1],[-0.1 1.1],'curvature','dec',-1:0.25:1,-1:0.25:1,'v1 gen dec')
 
-        subplot(422); hold on;
+        subplot(432); hold on;
         plotTrendPatchLine(gca,e1',b1',col,[0 1],9); co2(recNum-exptIds(1)+1) = corr(b1,e1);
         fixPlot(gca,[-0.1 1.1],[-0.1 1.1],'choices','dec',-1:0.25:1,-1:0.25:1,'v1 gen dec v choice')
 
-        subplot(425); hold on;
-        plotTrendPatchLine(gca,a1',c1',col,[-0.5 0.5],9); co5(recNum-exptIds(1)+1) = corr(a1,c1);
+        subplot(433); hold on;
+        plotTrendPatchLine(gca,e1',g1',col,[0 1],9); co3(recNum-exptIds(1)+1) = corr(e1,g1);
+        fixPlot(gca,[-0.1 1.1],[-0.1 1.1],'choices','dec',-1:0.25:1,-1:0.25:1,'v1 spe dec v choice')
+
+        subplot(437); hold on;
+        plotTrendPatchLine(gca,a1',c1',col,[-0.5 0.5],9); co7(recNum-exptIds(1)+1) = corr(a1,c1);
         fixPlot(gca,[-0.6 0.6],[-0.6 0.6],'beh error','dec error',-1:0.25:1,-1:0.25:1,'v1 gen dec error')
 
-        subplot(426); hold on;
-        plotTrendPatchLine(gca,a1',f1',col,[-0.5 0.5],9); co6(recNum-exptIds(1)+1) = corr(a1,f1);
+        subplot(438); hold on;
+        plotTrendPatchLine(gca,a1',f1',col,[-0.5 0.5],9); co8(recNum-exptIds(1)+1) = corr(a1,f1);
         fixPlot(gca,[-0.6 0.6],[-0.6 0.6],'beh error','dec error',-1:0.25:1,-1:0.25:1,'v1 spe dec error')
 
     end
-    sgtitle([num2str(ss) ': ' num2str(exptIds)])
-    % [co1; co2; co3; co4; co5; co6]
+    sgtitle([num2str(sessIds(ss)) ': ' num2str(setIds)])
 
-    for ii=1:8
-        subplot(4,2,ii);
+    for ii=[1 2 3 4 5 6 7 8 10 11]
+        subplot(4,3,ii);
         legend(num2str(round(eval(['co' num2str(ii)]),2)))
     end
 
-    figure(fig2); clf(fig2)
-    for recNum=exptIds
-        col = cols(recNum-exptIds(1)+1,:);
-
-        [~,~,grp] = unique([rec_v4(recNum).curv rec_v4(recNum).sel],'rows'); % mean across folds
-        a4 = rec_v4(recNum).sel-rec_v4(recNum).curv; 
-        a4 = groupsummary(a4,grp,'mean'); a4 = a4-mean(a4);
-        d4 = rec_v4(recNum).curv; d4 = groupsummary(d4,grp,'mean');
-        
-        % behavior
-        hold on;
-        plotTrendPatchLine(gca,d4',a4',col,[0 1],9);
-        fixPlot(gca,[-0.1 1.1],[-0.6 0.6],'curvature','beh error',0:0.1:1,-1:0.25:1,'beh error')
-    end
+    % figure(fig2); clf(fig2)
+    % for recNum=exptIds
+    %     col = cols(recNum-exptIds(1)+1,:);
+    % 
+    %     [~,~,grp] = unique([rec_v4(recNum).curv rec_v4(recNum).sel],'rows'); % mean across folds
+    %     a4 = rec_v4(recNum).sel-rec_v4(recNum).curv; 
+    %     a4 = groupsummary(a4,grp,'mean'); a4 = a4-mean(a4);
+    %     d4 = rec_v4(recNum).curv; d4 = groupsummary(d4,grp,'mean');
+    % 
+    %     % behavior
+    %     hold on;
+    %     plotTrendPatchLine(gca,d4',a4',col,[0 1],9);
+    %     fixPlot(gca,[-0.1 1.1],[-0.6 0.6],'curvature','beh error',0:0.1:1,-1:0.25:1,'beh error')
+    % end
 end
 
 

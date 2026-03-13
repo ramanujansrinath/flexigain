@@ -41,6 +41,8 @@ function plotGenError(rec)
     plot(x(t==3),y(t==3),'.','MarkerSize',12,'MarkerFaceColor','w','LineWidth',2,'color',cols{3})
     line([-1 1],[-1 1],'color','k','linestyle','--','linewidth',2);
     fixPlot(gca,[-0.2 1],[-0.2 1],'shape specific','shape general',-1:0.5:1,-1:0.5:1)
+
+    signrank(x,y)
     
     ht = sgtitle('correlation between the behavioral error and decoding error');
     ht.FontName = 'lato'; ht.FontSize = 20; ht.FontWeight = 'bold';
