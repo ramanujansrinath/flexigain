@@ -1,8 +1,9 @@
 %% get all data ids
 clc; clear; close all;
-load('data/figure3_intercept.mat','v1','v4')
+addpath('dep')
+load('data/supp7_intercept.mat','v1','v4')
 intercept_mid = v4.intercept_mid;
-intercept_len = v4.intercept_len;
+intercept_len = v1.intercept_len;
 
 %% plot scatter
 intercept_mid(~ismember([intercept_mid.mid_val],-20:20:20)) = [];

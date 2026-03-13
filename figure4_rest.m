@@ -122,6 +122,6 @@ function plot_gainsSelectivity(h,pSel,task_gains)
     set(h1(1),'Marker','o','LineWidth',1.5,'MarkerFaceColor','w','color',[0 0 0]); hold on
     set(h1(2),'LineWidth',2,'color',[0 0 0]);
     set(h1(3),'LineWidth',1,'color',[0 0 0],'LineStyle','-');
-    set(h1(4),'LineWidth',1,'color',[0 0 0],'LineStyle','-');
+    % set(h1(4),'LineWidth',1,'color',[0 0 0],'LineStyle','-');
     fixPlot(h,[-0.2 0.2],[-0.2 0.2],'parameter selectivity',{'task-dependent' 'response modulation'},-0.4:0.05:0.4,-2:0.05:2,'',{})
 end

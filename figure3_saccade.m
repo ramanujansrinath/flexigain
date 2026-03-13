@@ -1,13 +1,14 @@
 %% load a random session
 clc; close all; clear
-load('data/figure3_example.mat');
+addpath('dep')
+load('data/figure3_saccade.mat');
 
 %% V1
 figure('color','w','position',[100,272,879,528],'name','V1');
 
 resp_stim_mid = figure3_example_v1_mid.resp_stim;
 resp_arc_mid = figure3_example_v1_mid.resp_arc;
-p_set_mid = figure3_example_v1_mid.params;;
+p_set_mid = figure3_example_v1_mid.params;
 plot_curvDec([subplot(231) subplot(232)],p_set_mid,resp_stim_mid,resp_arc_mid)
 plot_saccMidDec(subplot(233),p_set_mid,resp_arc_mid)
 
@@ -22,7 +23,7 @@ figure('color','w','position',[997,272,879,528],'name','V4');
 
 resp_stim_mid = figure3_example_v4_mid.resp_stim;
 resp_arc_mid = figure3_example_v4_mid.resp_arc;
-p_set_mid = figure3_example_v4_mid.params;;
+p_set_mid = figure3_example_v4_mid.params;
 plot_curvDec([subplot(231) subplot(232)],p_set_mid,resp_stim_mid,resp_arc_mid)
 plot_saccMidDec(subplot(233),p_set_mid,resp_arc_mid)
 
