@@ -2,7 +2,7 @@
 clc; clear; close all;
 addpath('dep')
 load('data/supp7_intercept.mat','v1','v4')
-intercept_mid = v4.intercept_mid;
+intercept_mid = v1.intercept_mid;
 intercept_len = v1.intercept_len;
 
 %% plot scatter
